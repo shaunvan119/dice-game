@@ -11,3 +11,9 @@ const player2Scoreboard = document.getElementById("player2Scoreboard")
 const message = document.getElementById("message")
 const rollBtn = document.getElementById("rollBtn")
 const resetBtn = document.getElementById("resetBtn")
+
+ // event listener for roll dice button
+ rollBtn.addEventListener("click", function(){
+     console.log(Math.floor(Math.random() * 6));
+ })
+ 
