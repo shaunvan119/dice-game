@@ -18,18 +18,20 @@ rollBtn.addEventListener("click", function() {
      
      // if statement to evaluate who turn is it
      if (player1Turn) {
+         player1Score += randomNumber
          player1Dice.textContent = randomNumber
-         player1Scoreboard.textContent = randomNumber
+         player1Scoreboard.textContent = player1Score
          message.textContent = "Player 1 rolled "
          player1Dice.classList.remove("active");
          player2Dice.classList.add("active");
         
      } else {
+        player2Score += randomNumber
         player2Dice.textContent = randomNumber 
-        player2Scoreboard.textContent = randomNumber
+        player2Scoreboard.textContent = player2Score
         message.textContent = "Player 2 rolled "
         player2Dice.classList.remove("active");
-        player1Dice.classList.add("active");
+         player1Dice.classList.add("active");
        
         
      }
