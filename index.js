@@ -12,6 +12,12 @@ const message = document.getElementById("message")
 const rollBtn = document.getElementById("rollBtn")
 const resetBtn = document.getElementById("resetBtn")
 
+function displayButton() {
+    rollBtn.style.display = 'none'
+    resetBtn.style.display = 'block'
+
+}
+
  rollBtn.addEventListener("click", function() {
     const randomNumber = Math.floor(Math.random() * 6) + 1
 
@@ -31,14 +37,12 @@ const resetBtn = document.getElementById("resetBtn")
         message.textContent = "Player 1 Turn"
     }  
     
-    if ( player1Score >= 20) {
+    if (player1Score >= 20) {
         message.textContent = "Player 1 has won!"
-        rollBtn.style.display = 'none'
-        resetBtn.style.display = 'block'
-    } if (player2Score >= 20) {
+        displayButton()
+    } else if (player2Score >= 20) {
         message.textContent = "Player 2 has won!"
-        rollBtn.style.display = 'none'
-        resetBtn.style.display = 'block'
+        displayButton()
     }
     
     // 1. Check if a player has won. If so, change the message to "Player X has won!"
