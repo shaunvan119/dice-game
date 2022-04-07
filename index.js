@@ -12,8 +12,27 @@ const message = document.getElementById("message")
 const rollBtn = document.getElementById("rollBtn")
 const resetBtn = document.getElementById("resetBtn")
 
- // event listener for roll dice button
- rollBtn.addEventListener("click", function(){
-     console.log(Math.floor(Math.random() * 6));
+rollBtn.addEventListener("click", function() {
+     const randomNumber = Math.floor(Math.random() * 6) + 1
+     console.log(randomNumber)
+     
+     // if statement to evaluate who turn is it
+     if (player1Turn) {
+         player1Dice.textContent = randomNumber
+         player1Scoreboard.textContent = randomNumber
+         message.textContent = "Player 1 rolled "
+         player1Dice.classList.remove("active");
+         player2Dice.classList.add("active");
+        
+     } else {
+        player2Dice.textContent = randomNumber 
+        player2Scoreboard.textContent = randomNumber
+        message.textContent = "Player 2 rolled "
+        player2Dice.classList.remove("active");
+        player1Dice.classList.add("active");
+       
+        
+     }
+     player1Turn = !player1Turn
  })
  
